@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @model Thuleng.Models.ContactModel
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Contacts", "Contact", FormMethod.Post, new { id = "contact-form" }))
+{
+<fieldset>
+  @Html.TextBoxFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Email)
+    @Html.TextBoxFor(model => model.Phone)
+    @Html.TextAreaFor(model => model.Message, new { @class = "img-shadow" })
+    <input class="form-button" data-type="reset" value="Clear" />
+    <input class="form-button" data-type="submit" type="submit" value="Send" />
+</fieldset>     
+}

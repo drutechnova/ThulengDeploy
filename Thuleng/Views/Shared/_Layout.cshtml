@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    <link rel="stylesheet" href="~/Scripts/plugins/metro/css/modern.css" />
+    <link rel="stylesheet" href="~/Scripts/plugins/metro/css/modern-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="../../Scripts/plugins/retinamenu/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../Scripts/plugins/retinamenu/css/component.css" />
+    <script src="~/Scripts/plugins/retinamenu/js/modernizr.custom.js"></script>
+
+    <link href="~/Scripts/plugins/scrollup/css/themes/image.css" rel="stylesheet" />
+    <link href="~/Scripts/plugins/scrollup/css/labs.css" rel="stylesheet" />
+    <script src="~/Scripts/plugins/scrollup/jquery.scrollUp.js"></script>
+
+    <script src="~/Scripts/plugins/metro/javascript/carousel.js"></script>
+    <style type="text/css">
+        .footerDesign {
+            float: right;
+        }
+        .footerSocial {
+            float: left;
+        }
+    </style>
+</head>
+<body class="metrouicss">
+    <div class="page bg-color-darken">
+
+        <nav id="menu" class="nav">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i aria-hidden="true" class="icon-home"></i>
+                        </span>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i aria-hidden="true" class="icon-team"></i>
+                        </span>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i aria-hidden="true" class="icon-services"></i>
+                        </span>
+                        <span>Services</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i aria-hidden="true" class="icon-portfolio"></i>
+                        </span>
+                        <span>Portfolio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i aria-hidden="true" class="icon-contact"></i>
+                        </span>
+                        <span>Contact</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i aria-hidden="true" class="icon-blog"></i>
+                        </span>
+                        <span>Blog</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+    <div class="page bg-color-darken fg-color-lighten">
+
+        @RenderBody()
+    </div>
+    <div class="page bg-color-darken fg-color-lighten">
+        <div class="nav-bar bg-color-darken">
+            <div class="nav-bar-inner padding10">
+                <span class="footerSocial">
+                 
+                  Copyright &copy; 2013 Thuleng Entertainments . All Rights Reserved. 
+                    <a href="https://www.facebook.com" target="_blank">
+                        <span class="icon">
+                            <i aria-hidden="true" class="icon-facebook"></i>
+                        </span>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank">
+                        <span class="icon">
+                            <i aria-hidden="true" class="icon-twitter"></i>
+                        </span>
+                    </a>
+                </span>
+
+                <span class="fg-color-orange footerDesign"><a class="fg-color-orange" href="http://www.technova.co.za" target="_blank">Designed by: Technova &copy;</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <script>
+        //  The function to change the class
+        var changeClass = function (r, className1, className2) {
+            var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
+            if (regex.test(r.className)) {
+                r.className = r.className.replace(regex, ' ' + className2 + ' ');
+            }
+            else {
+                r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"), ' ' + className1 + ' ');
+            }
+            return r.className;
+        };
+
+        //  Creating our button in JS for smaller screens
+        var menuElements = document.getElementById('menu');
+        menuElements.insertAdjacentHTML('afterBegin', '<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"> </i> Menu</button>');
+
+        //  Toggle the class on click to show / hide the menu
+        document.getElementById('menutoggle').onclick = function () {
+            changeClass(this, 'navtoogle active', 'navtoogle');
+        };
+
+        // http://tympanus.net/codrops/2013/05/08/responsive-retina-ready-menu/comment-page-2/#comment-438918
+        document.onclick = function (e) {
+            var mobileButton = document.getElementById('menutoggle'),
+                buttonStyle = mobileButton.currentStyle ? mobileButton.currentStyle.display : getComputedStyle(mobileButton, null).display;
+
+            if (buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
+                changeClass(mobileButton, 'navtoogle active', 'navtoogle');
+            }
+        };
+
+        $(function () {
+            $.scrollUp({ scrollText: '' });
+
+            $('html.js body.metrouicss div.page nav#menu.nav button#menutoggle.navtoogle').css({ "height": "50px" });
+            $('html.js body.metrouicss div.page nav#menu.nav ul li a span.icon i').css({ "font-family": "'icomoon'" });
+            $('html.js body.metrouicss div.page nav#menu.nav button#menutoggle.navtoogle i.icon-menu').css({
+                "font-family": "'icomoon'",
+                "z-index": "999999999"
+            });
+
+        });
+    </script>
+</body>
+</html>
