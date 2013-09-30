@@ -262,10 +262,6 @@
     <Content Include="Scripts\plugins\metro\css\theme-dark.css" />
     <Content Include="Scripts\plugins\metro\fonts\iconFont.svg" />
     <Content Include="Scripts\plugins\metro\fonts\license.txt" />
-    <Content Include="Scripts\plugins\metro\fontse\codropsicons\codropsicons.svg" />
-    <Content Include="Scripts\plugins\metro\fontse\codropsicons\license.txt" />
-    <Content Include="Scripts\plugins\metro\fontse\icomoon.dev.svg" />
-    <Content Include="Scripts\plugins\metro\fontse\icomoon.svg" />
     <Content Include="Scripts\plugins\metro\images\preloader-w8-cycle-black.gif" />
     <Content Include="Scripts\plugins\metro\images\preloader-w8-cycle-white.gif" />
     <Content Include="Scripts\plugins\metro\images\preloader-w8-line-black.gif" />
@@ -541,14 +537,6 @@
     <Content Include="Scripts\plugins\metro\public\version.phtml" />
     <Content Include="Scripts\plugins\metro\public\windows8start.php" />
     <Content Include="Scripts\plugins\metro\README.md" />
-    <Content Include="Scripts\plugins\metro\fontse\.DS_Store" />
-    <Content Include="Scripts\plugins\metro\fontse\codropsicons\.DS_Store" />
-    <Content Include="Scripts\plugins\metro\fontse\codropsicons\codropsicons.eot" />
-    <Content Include="Scripts\plugins\metro\fontse\codropsicons\codropsicons.ttf" />
-    <Content Include="Scripts\plugins\metro\fontse\codropsicons\codropsicons.woff" />
-    <Content Include="Scripts\plugins\metro\fontse\icomoon.eot" />
-    <Content Include="Scripts\plugins\metro\fontse\icomoon.ttf" />
-    <Content Include="Scripts\plugins\metro\fontse\icomoon.woff" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
